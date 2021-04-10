@@ -1,15 +1,16 @@
 package com.lambton.student;
 
-import com.lambton.Gender;
-import com.lambton.Person;
+import com.lambton.exception.InvalidFirstName;
+import com.lambton.utils.Gender;
+import com.lambton.base.Person;
 import com.lambton.vehicle.Vehicle;
 
-public class Student extends Person {
+public abstract class Student extends Person {
     protected String collegeName;
     protected String courseName;
     protected String result;
 
-    public Student(int id, String firstName, String lastName, Gender gender, Vehicle vehicle, String collegeName, String courseName, String result) {
+    public Student(int id, String firstName, String lastName, Gender gender, Vehicle vehicle, String collegeName, String courseName, String result) throws InvalidFirstName {
         super(id, firstName, lastName, gender, vehicle);
         this.collegeName = collegeName;
         this.courseName = courseName;

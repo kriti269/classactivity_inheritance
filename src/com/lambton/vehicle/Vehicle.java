@@ -1,6 +1,8 @@
 package com.lambton.vehicle;
 
-public class Vehicle {
+import com.lambton.base.IDisplay;
+
+public abstract class Vehicle implements IDisplay {
     protected String vehicleId;
     protected String brand;
     protected boolean isInsured;
@@ -34,4 +36,6 @@ public class Vehicle {
     public void setInsured(boolean insured) {
         isInsured = insured;
     }
+
+    public abstract String getType();
 }

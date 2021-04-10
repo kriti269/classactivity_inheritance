@@ -1,17 +1,24 @@
-package com.lambton;
+package com.lambton.base;
 
+import com.lambton.exception.InvalidFirstName;
+import com.lambton.utils.Gender;
 import com.lambton.vehicle.Vehicle;
 
-public class Person {
+public abstract class Person implements IDisplay{
     protected int id;
     protected String firstName;
     protected String lastName;
     protected Gender gender;
     protected Vehicle vehicle;
 
-    public Person(int id, String firstName, String lastName, Gender gender, Vehicle vehicle) {
+    public Person(int id, String firstName, String lastName, Gender gender, Vehicle vehicle) throws InvalidFirstName {
         this.id = id;
-        this.firstName = firstName;
+        if(InvalidFirstName.validateFirstName(firstName)){
+            this.firstName = firstName;
+        }
+        else {
+            throw new InvalidFirstName("InvalidFirstName Exception:: First Name length less than 10: "+ firstName.length());
+        }
         this.lastName = lastName;
         this.gender = gender;
         this.vehicle = vehicle;
@@ -29,8 +36,14 @@ public class Person {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstName(String firstName) throws InvalidFirstName {
+
+        if(InvalidFirstName.validateFirstName(firstName)){
+            this.firstName = firstName;
+        }
+        else{
+            throw new InvalidFirstName("InvalidFirstName Exception:: First Name length less than 10: "+ firstName.length());
+        }
     }
 
     public String getLastName() {
@@ -56,4 +69,6 @@ public class Person {
     public void setVehicle(Vehicle vehicle) {
         this.vehicle = vehicle;
     }
+
+    public abstract String getType();
 }
