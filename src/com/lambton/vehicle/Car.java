@@ -25,10 +25,10 @@ public class Car extends Vehicle{
 
     @Override
     public void display() {
-        System.out.println("Vehicle Type        :"+this.getType());
-        System.out.println("Vehicle Id          :"+this.getVehicleId());
-        System.out.println("Vehicle Brand       :"+this.getBrand());
-        System.out.println("Vehicle is insured  :"+this.isInsured());
-        System.out.println("Vehicle color       :"+this.getColor());
+        System.out.println("Vehicle Type                :"+this.getType());
+        System.out.println("Vehicle Id                  :"+this.getVehicleId());
+        System.out.println("Vehicle Brand               :"+this.getBrand());
+        System.out.println("Vehicle is insured          :"+this.isInsured());
+        System.out.println("Vehicle color               :"+this.getColor());
     }
 }

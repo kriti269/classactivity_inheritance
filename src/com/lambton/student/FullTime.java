@@ -4,6 +4,7 @@ import com.lambton.exception.InvalidFirstName;
 import com.lambton.utils.Gender;
 import com.lambton.vehicle.Vehicle;
 
+
 public class FullTime extends Student{
     private float attendance;
 

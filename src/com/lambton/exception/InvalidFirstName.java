@@ -6,7 +6,7 @@ public class InvalidFirstName extends Exception{
     }
 
     public static boolean validateFirstName(String name){
-        if(name.length()<10){
+        if(name.length()<2){
             return false;
         }
         else{

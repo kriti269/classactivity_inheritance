@@ -8,8 +8,8 @@ import com.lambton.vehicle.Vehicle;
 public abstract class Faculty extends Employee{
     protected String department;
 
-    public Faculty(int id, String firstName, String lastName, Gender gender, Vehicle vehicle, float totalSalary, String department) throws InvalidSalaryException, InvalidFirstName {
-        super(id, firstName, lastName, gender, vehicle, totalSalary);
+    public Faculty(int id, String firstName, String lastName, Gender gender, Vehicle vehicle, float baseSalary, String department) throws InvalidSalaryException, InvalidFirstName {
+        super(id, firstName, lastName, gender, vehicle, baseSalary);
         this.department = department;
     }
 
@@ -20,4 +20,6 @@ public abstract class Faculty extends Employee{
     public void setDepartment(String department) {
         this.department = department;
     }
+
+
 }
